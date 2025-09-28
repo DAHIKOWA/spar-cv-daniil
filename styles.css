@@ -1,0 +1,62 @@
+/* styles.css — uitgebreid, clean en printvriendelijk (B1–B2 tekst) */
+:root{
+  --bg:#fff;--text:#0e1116;--muted:#667085;--border:#e5e7eb;--primary:#0d6efd;--container:900px
+}
+*{box-sizing:border-box}
+body{color:var(--text);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.small{font-size:.925rem;color:var(--muted)}
+.skip{position:absolute;left:-9999px;top:auto}
+.skip:focus{left:8px;top:8px;background:#fff;border:2px solid #000;padding:6px 10px}
+
+.topnav{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 8px}
+.topnav a{text-decoration:none;border-bottom:1px solid #d1d5db}
+
+.hero{border-bottom:1px solid var(--border);padding:32px 0 16px;background:linear-gradient(180deg,#fafafa,transparent 60%)}
+.hero h1{font-size:2.1rem;margin:0 0 4px}
+.hero .muted{color:var(--muted);font-weight:500}
+.role{margin:0 0 8px;font-weight:600}
+.intro{margin:.25rem 0 1rem;max-width:70ch}
+.meta{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-wrap:wrap;gap:14px}
+.meta li{margin:0}
+
+.cta{display:flex;gap:10px;margin:12px 0}
+.btn{display:inline-block;padding:.6rem .9rem;border:1px solid var(--primary);border-radius:8px;text-decoration:none;font-weight:600}
+.btn.btn-outline{background:#fff;border-color:#c7d2fe}
+
+main{padding:20px 0 44px}
+h2{font-size:1.15rem;margin:22px 0 8px}
+ul{padding-left:20px}
+.bullets li{margin:.2rem 0}
+
+.grid{display:grid;gap:12px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+
+.card{border:1px solid var(--border);border-radius:10px;padding:14px;background:#fff;margin-bottom:10px}
+.card header{display:flex;justify-content:space-between;gap:10px;font-weight:600}
+.period{color:var(--muted)}
+
+.inline{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0}
+
+.availability .slot{border:1px dashed var(--border);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;align-items:flex-start}
+.note{color:var(--muted)}
+.hint{color:var(--muted);font-size:.9rem;margin-top:6px}
+
+.contact-list{list-style:none;padding:0;margin:0 0 8px;display:flex;flex-wrap:wrap;gap:12px}
+.footer{border-top:1px solid var(--border);padding:16px 0 28px;margin-top:16px}
+
+/* Print styles */
+@media print{
+  :root{--container:100%}
+  @page{size:A4;margin:1.6cm}
+  .topnav,.cta{display:none !important}
+  .hero{background:#fff}
+  a[href^="http"]::after{content:""}
+}
+
+
+/* small badge under intro */
+.badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:.25rem .6rem;font-size:.9rem;color:#111;background:#fff;margin:.3rem 0 .2rem}
+@media print{.badge{display:none}}
